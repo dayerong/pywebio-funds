@@ -4,5 +4,5 @@
 
 ---
 
-![image](https://github.com/dayerong/pywebio-funds/blob/master/1.png?raw=true)
-![image](https://github.com/dayerong/pywebio-funds/blob/master/2.png?raw=true)
+![image](https://raw.githubusercontent.com/dayerong/pywebio-funds/main/1.png)
+![image](https://raw.githubusercontent.com/dayerong/pywebio-funds/main/1.png)
