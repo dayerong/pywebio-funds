@@ -2,4 +2,4 @@
 applications:
  - name: py-tools
    random-route: true
-   memory: 128M
+   memory: 256M

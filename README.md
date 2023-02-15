@@ -12,3 +12,11 @@
 
 <img src="https://raw.githubusercontent.com/dayerong/pywebio-funds/main/3.png" width="500" alt="help"/>
 <img src="https://raw.githubusercontent.com/dayerong/pywebio-funds/main/4.png" width="500" alt="help"/>
+
+- ibmcloud
+```angular2
+ibmcloud login -r us-south
+ibmcloud target -g Default
+ibmcloud target --cf
+ibmcloud cf push
+```
