@@ -16,7 +16,8 @@ COPY ./requirements.txt /py-tools/requirements.txt
 
 # install dependencies
 RUN set -eux \
-    && pip install -r /py-tools/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/\
+    && pip install -r /py-tools/requirements.txt -i https://pypi.douban.com/simple/\
+    && pip install akshare -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host=mirrors.aliyun.com  --upgrade \
     && rm -rf /root/.cache/pip
 
 # copy project

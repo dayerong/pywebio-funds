@@ -6,7 +6,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
 
-from routers import pywebio_helper
+from routers import pywebio_stocks, pywebio_funds
 from pywebio.platform.fastapi import asgi_app
 
 app = FastAPI()
@@ -27,15 +27,21 @@ app.add_middleware(
 
 @enter_app.get("/", response_class=RedirectResponse)
 def root() -> RedirectResponse:
-    response = RedirectResponse(url="/add/", status_code=302)
+    response = RedirectResponse(url="/index/", status_code=302)
     return response
 
 
-add_funds = asgi_app(pywebio_helper.add_fund)
-query_funds = asgi_app(pywebio_helper.query_fund)
+add_stocks = asgi_app(pywebio_stocks.add_stock)
+query_stocks = asgi_app(pywebio_stocks.query_stock)
+add_funds = asgi_app(pywebio_funds.add_fund)
+query_funds = asgi_app(pywebio_funds.query_fund)
+index = asgi_app(pywebio_funds.index)
 
-app.mount("/add", add_funds)
-app.mount("/query", query_funds)
+app.mount("/add/stocks", add_stocks)
+app.mount("/query/stocks", query_stocks)
+app.mount("/add/funds", add_funds)
+app.mount("/query/funds", query_funds)
+app.mount("/index", index)
 app.mount("/", enter_app)
 
 if __name__ == '__main__':

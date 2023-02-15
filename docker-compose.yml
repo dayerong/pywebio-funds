@@ -1,12 +1,13 @@
 version: "3"
 
 services:
-  py-tools:
-    container_name: py-tools
+  funds_stocks:
+    container_name: funds_stocks
     restart: always
     volumes:
       - /data/app/logs/py-tools:/py-tools/app/logs
       - /etc/localtime:/etc/localtime
+      - /data/app/pywebio-funds:/py-tools
     build:
       context: ""
       dockerfile: Dockerfile
